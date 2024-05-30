@@ -1,0 +1,11 @@
+{
+    "Comment 1": "Below is for imageMC.py",
+    "Input Images":["sar_image.tif"],
+    "Input path": "C:/Users/leiwang/workspace/images",
+    "Output path": "C:/Users/leiwang/workspace/images",
+    "cell size x": 10,
+    "cell size y": 10,
+    "Output name":"sar_clp.tif",
+    "Clip polygon": "C:\\Users\\leiwang\\workspace\\images\\clp_polygon.shp",
+    "noData": -9999
+}
