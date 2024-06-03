@@ -1,0 +1,11 @@
+
+{
+    "Workspace": "",
+    "extent gcs[x1,y1,x2,y2]" : "-80.3248099, 34.9065437,-77.0897903, 36.6986762",
+    "url jrc" : "JRC/GSW1_4/GlobalSurfaceWater",
+    "jrc band":"occurrence",
+    "url Sentinel-1": "COPERNICUS/S1_GRD",
+    "Sentinel-1 band": "VV",
+    "Seninel-1 date[yyyy-mm-dd,yyyy-mm--dd]":"2016-10-10,2016-10-30",
+    "Coodinate system": "EPSG:32119"
+}
