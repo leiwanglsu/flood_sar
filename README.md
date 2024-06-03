@@ -40,11 +40,11 @@
 - Run regiongrow.py with the configuration file regiongrow.json as
 ```json
 {
-"Workspace": "C:\\Users\\leiwang\\workspace\\images",
-"seed image": "jrc_water_clp.tif",
-"grow image": "sar_clp.tif",
-"out image": "sar_perment_water.tif",
-"threshold": -13.92
+	"Workspace": "C:\\Users\\leiwang\\workspace\\images",
+	"seed image": "jrc_water_clp.tif",
+	"grow image": "sar_clp.tif",
+	"out image": "sar_perment_water.tif",
+	"threshold": -13.92
 }
 ```
 
@@ -61,7 +61,7 @@
 ```
 
 - Run multigamma.py with json:
-```python
+```json
 {
     "Workspace": "C:\\Users\\leiwang\\workspace\\images",
     "input image" : "sar_clp.tif",
