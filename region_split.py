@@ -3,8 +3,7 @@ from osgeo import gdal, ogr, osr
 import numpy as np
 import os
 from shapely.geometry import Polygon
-import shapely.wkt
-
+from tqdm import tqdm
 def split_tile(dataset, x_offset, y_offset, x_tile_size, y_tile_size, geotransform, level, max_level, threshold):
     """
     Split the tile recursively up to max_level levels and return polygons for tiles
@@ -77,7 +76,7 @@ def create_polygons(tile_info, output_shapefile, projection):
     shapefile = None  # Close the shapefile
 
 def main():
-    import json
+    import json,os
     launch_json = "region_split.json"
     json_file_path = launch_json
 
@@ -85,8 +84,9 @@ def main():
     try:
         with open(json_file_path, 'r') as file:
             args = json.load(file)
-            input_path = args['input image']
-            output_shapefile = args['output polygon']
+            workspace = args["Workspace"]
+            input_path = os.path.join(workspace,args['input image'])
+            output_shapefile = os.path.join(workspace,args['output polygon'])
             threshold = args['threshold']
             tile_size =  args['tile size (m)']
             max_level = args['levels']  # Maximum recursion level
@@ -117,16 +117,16 @@ def main():
     tile_info = []
     x_tiles = (x_size + tile_size - 1) // tile_size  # Ceiling division
     y_tiles = (y_size + tile_size - 1) // tile_size  # Ceiling division
-    print("Splitting tiles...")
-    for i in range(y_tiles):
-        for j in range(x_tiles):
-            x_offset = j * tile_size
-            y_offset = i * tile_size
-            x_tile_size = min(tile_size, x_size - x_offset)
-            y_tile_size = min(tile_size, y_size - y_offset)
-            tile_info.extend(
-                split_tile(dataset, x_offset, y_offset, x_tile_size, y_tile_size, geotransform, 1, max_level, threshold)
-            )
+    import itertools
+    for i, j in tqdm(itertools.product(range(0,y_tiles), range(0,x_tiles)),desc="procesing tiles"):
+
+        x_offset = j * tile_size
+        y_offset = i * tile_size
+        x_tile_size = min(tile_size, x_size - x_offset)
+        y_tile_size = min(tile_size, y_size - y_offset)
+        tile_info.extend(
+            split_tile(dataset, x_offset, y_offset, x_tile_size, y_tile_size, geotransform, 1, max_level, threshold)
+        )
 
     dataset = None  # Close the dataset
 

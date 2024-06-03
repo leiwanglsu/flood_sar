@@ -1,7 +1,8 @@
 {
-    "input image": "C:\\Users\\leiwang\\workspace\\images\\sar_perment_water.tif",
-    "output polygon": "C:\\Users\\leiwang\\workspace\\images\\regions.shp",
+    "Workspace": "C:\\Users\\leiwang\\workspace\\images",
+    "input image": "sar_perment_water.tif",
+    "output polygon": "regions.shp",
     "threshold": 0.2,
     "tile size (m)": 2000,
     "levels": 4
-    }
+}

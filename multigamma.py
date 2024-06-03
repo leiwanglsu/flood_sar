@@ -4,10 +4,10 @@ import numpy as np
 from gamma_fit import find_threshold,invpsi,fit,compute_bimodality
 
 from osgeo import gdal, ogr, osr
-
+from tqdm import tqdm
         
 def main():
-    import json
+    import json,os
     launch_json = "multigamma.json"
     json_file_path = launch_json
 
@@ -16,10 +16,12 @@ def main():
         
         with open(json_file_path, 'r') as file:
             args = json.load(file)
-            input_path = args['input image']
-            shapefile_path = args['regions']
+            workspace = args["Workspace"]
+
+            input_path = os.path.join(workspace,args['input image'])
+            shapefile_path = os.path.join(workspace,args['regions'])
             init = args['init']
-            point_shapefile_path = args['point_shapefile_path']
+            point_shapefile_path = os.path.join(workspace,args['point_shapefile_path'])
             init = [float(i) for i in init.split()]
             alpha = np.array(init[0:2])
             rate = np.array(init[2:4])
@@ -51,8 +53,7 @@ def main():
     thresholds =[]
     BCs = []
     
-    for feature in layer:
-        print(f"feature id {feature.GetFID()}")    
+    for feature in tqdm(layer,desc="Fitting bimodal distributions"):
         mean = feature.GetField("mean")
         geom = feature.GetGeometryRef()
        # Use gdal.Warp to clip the raster with the polygon and store the result in memory
@@ -104,7 +105,7 @@ def main():
                 threshold = float('inf') 
             else:  
                 threshold = bins[index] + shift
-        except:
+        except Exception as e:
             threshold = float('inf')    
         #write to the feature class 
         thresholds.append(threshold)
@@ -122,7 +123,9 @@ def main():
     point_layer.CreateField(ogr.FieldDefn("threshold", ogr.OFTReal))
     point_layer.CreateField(ogr.FieldDefn("BC", ogr.OFTReal))
     # Add points (centroids) to the point shapefile
-    for i, polygon_feature in enumerate(shapefile):
+    shapefile = ogr.Open(shapefile_path,1)
+    layer = shapefile.GetLayer()
+    for i, polygon_feature in tqdm(enumerate(layer),desc="writing features"):
         # Get the centroid of the polygon
         geom = polygon_feature.GetGeometryRef()
         centroid = geom.Centroid()

@@ -33,7 +33,9 @@ def main():
         args = json.load(file)
 
 
-
+#turn on GDAL exceptions to avoid deprecation warning
+    gdal.UseExceptions()
+    ogr.UseExceptions()
     path = args["Input path"]
     outputName = args["Output name"]
     inputImages = args["Input Images"]

@@ -1,0 +1,6 @@
+{
+    "Workspace": "C:\\Users\\leiwang\\workspace\\images",
+    "shapefile_path" : "region_centroid.shp",
+    "output_path" : "threshold.shp",
+    "where clause": "(BC > 0.55 and (threshold > -20 and threshold <  ) or (BC < 0.55 and (threshold > -10 and threshold < )"
+}

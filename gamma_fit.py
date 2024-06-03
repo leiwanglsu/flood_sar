@@ -29,6 +29,8 @@ def find_threshold(bins,alpha,rate,pi):
     minima = float('inf')
     minima_index = None
     # Iterate through histogram values
+    if(max_value == min_value):
+        return 0
     mode1 = int((alpha[0] -1) / rate[0] * 1000 / (max_value-min_value))
     mode2 = int((alpha[1] - 1) / rate[1]* 1000 / (max_value-min_value))
     #print((alpha -1) / rate,mode1,mode2)

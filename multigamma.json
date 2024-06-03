@@ -1,7 +1,7 @@
 {
-    "input image" : "C:\\Users\\leiwang\\workspace\\images\\sar_image.tif",
-    "regions" :"C:\\Users\\leiwang\\workspace\\images\\regions.shp",
-    "point_shapefile_path" :"C:\\Users\\leiwang\\workspace\\images\\region_centroid.shp",
+    "Workspace": "C:\\Users\\leiwang\\workspace\\images",
+    "input image" : "sar_clp.tif",
+    "regions" :"regions.shp",
+    "point_shapefile_path" :"region_centroid.shp",
     "init" : "18 31 1 2"
-
 } 

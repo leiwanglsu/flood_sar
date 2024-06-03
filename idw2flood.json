@@ -1,0 +1,10 @@
+{
+    "Workspace": "C:\\Users\\leiwang\\workspace\\images",
+    "Point Features": "threshold.shp",
+    "field name" : "threshold",
+    "Raster": "sar_clp.tif",
+    "Output binary raster": "bin_flood.tif",
+    "nn": 12,
+    "power": 2
+
+}
