@@ -1,16 +1,31 @@
 ## Preparation
-- Install required packages pybind11, gdal, pyproj, json, shapely, tqdm
-- Install the provided python package by 
-	- "pip install ."
+- Install required packages pybind11, gdal, pyproj, json, shapely, tqdm, earthengine-api
+- Specifically for google earth engine first time running, run `earthengine authenticate` first
+- Install the provided python package by `pip install .`
 ##  Run the scripts
 - Run the following python scripts with correct configuration .json files. 
+- geeData.py: download the jrc water and Sentinel-1 image with user specified band from Google Earth Engine (Warning, this takes a long time because gee processes the image on the server side, the larger the image the longer the time)
 - ImageMC.py: prepare images by mosaicing, reprojection, and clipping
 - regiongrow.py: use region grow to generate seeds from jrc water occurrence images
 - region_split.py: multiresolution region splitting for bimodal gamma fitting
 - multigamma.py: multivariate gamma function fitting (implemented for bimodal)
 - filter.py: filter the threshold values to remove outliers
 - idw2flood.py: interpolate the threshold values and thresholding the sar image for binary classification
-- Operation steps:
+## Operation steps:
+- Run geeData.py with the configuration file geeData.json:
+```json
+{
+    "Workspace": "",
+    "extent gcs[x1,y1,x2,y2]" : "-80.3248099, 34.9065437,-77.0897903, 36.6986762",
+    "url jrc" : "JRC/GSW1_4/GlobalSurfaceWater",
+    "jrc band":"occurrence",
+    "url Sentinel-1": "COPERNICUS/S1_GRD",
+    "Sentinel-1 band": "VV",
+    "Sentinel-1 date[yyyy-mm-dd,yyyy-mm--dd]":"2016-10-10,2016-10-30",
+    "Coordinate system": "EPSG:32119"
+}
+```
+
 - Run ImageMC.py with the configuration file imageMC.json as:
 ```json
 {
