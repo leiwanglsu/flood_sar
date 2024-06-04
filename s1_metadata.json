@@ -1,0 +1,187 @@
+{
+    "type": "Image",
+    "bands": [
+        {
+            "id": "VV",
+            "data_type": {
+                "type": "PixelType",
+                "precision": "double"
+            },
+            "dimensions": [
+                28592,
+                21765
+            ],
+            "crs": "EPSG:32617",
+            "crs_transform": [
+                10,
+                0,
+                558527.5947612999,
+                0,
+                -10,
+                4083071.950100277
+            ]
+        },
+        {
+            "id": "angle",
+            "data_type": {
+                "type": "PixelType",
+                "precision": "float"
+            },
+            "dimensions": [
+                21,
+                10
+            ],
+            "crs": "EPSG:32617",
+            "crs_transform": [
+                12513.341541404952,
+                -4047.6126269681845,
+                592435.7344146699,
+                2528.408479395788,
+                19998.176867217757,
+                3865679.872117682
+            ]
+        }
+    ],
+    "version": 1717468155456944,
+    "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20161011T231406_20161011T231431_013449_0157D0_0739",
+    "properties": {
+        "intersection_area": 42113736281.31033,
+        "SNAP_Graph_Processing_Framework_GPF_vers": "6.0.4",
+        "SLC_Processing_facility_org": "ESA",
+        "SLC_Processing_facility_country": "Germany",
+        "GRD_Post_Processing_facility_org": "ESA",
+        "transmitterReceiverPolarisation": [
+            "VV",
+            "VH"
+        ],
+        "GRD_Post_Processing_start": 1476237047830,
+        "sliceNumber": 3,
+        "GRD_Post_Processing_facility_name": "Copernicus S1 Core Ground Segment - DPA",
+        "resolution": "H",
+        "SLC_Processing_facility_name": "Copernicus S1 Core Ground Segment - DPA",
+        "system:footprint": {
+            "type": "LinearRing",
+            "coordinates": [
+                [
+                    -79.98319513204794,
+                    34.93044858170828
+                ],
+                [
+                    -79.98109430802623,
+                    34.93043094776414
+                ],
+                [
+                    -78.81267224116563,
+                    35.10865918559229
+                ],
+                [
+                    -77.26180232414961,
+                    35.326756538136074
+                ],
+                [
+                    -77.32010840497313,
+                    35.65137981013959
+                ],
+                [
+                    -77.4196076195585,
+                    36.13825095459959
+                ],
+                [
+                    -77.52009510311026,
+                    36.625075172200425
+                ],
+                [
+                    -77.56292814506153,
+                    36.83021124358579
+                ],
+                [
+                    -78.25632682140612,
+                    36.73800564351098
+                ],
+                [
+                    -78.93635369808311,
+                    36.643387880411396
+                ],
+                [
+                    -80.29174234237358,
+                    36.44239807157644
+                ],
+                [
+                    -80.33373850277988,
+                    36.43586261674584
+                ],
+                [
+                    -80.3334205523396,
+                    36.43280206781318
+                ],
+                [
+                    -80.33085370234646,
+                    36.419801860814495
+                ],
+                [
+                    -80.30479397535247,
+                    36.302273937479825
+                ],
+                [
+                    -80.26691681789052,
+                    36.136254173980184
+                ],
+                [
+                    -80.08042274786861,
+                    35.33786523854726
+                ],
+                [
+                    -80.00258565592081,
+                    35.008587932306966
+                ],
+                [
+                    -79.98319513204794,
+                    34.93044858170828
+                ]
+            ]
+        },
+        "familyName": "SENTINEL-1",
+        "segmentStartTime": 1476227593040,
+        "missionDataTakeID": 88016,
+        "GRD_Post_Processing_facility_country": "Germany",
+        "nssdcIdentifier": "2014-016A",
+        "productClass": "S",
+        "phaseIdentifier": 1,
+        "orbitProperties_pass": "ASCENDING",
+        "relativeOrbitNumber_stop": 77,
+        "system:time_end": 1476227646000,
+        "SLC_Processing_facility_site": "DLR-Oberpfaffenhofen",
+        "GRD_Post_Processing_stop": 1476237544000,
+        "system:time_start": 1476227646000,
+        "instrumentMode": "IW",
+        "totalSlices": 9,
+        "SLC_Processing_stop": 1476237415000,
+        "startTimeANX": 566835.6,
+        "SLC_Processing_start": 1476237149000,
+        "resolution_meters": 10,
+        "instrumentSwath": "IW",
+        "relativeOrbitNumber_start": 77,
+        "productTimelinessCategory": "Fast-24h",
+        "SLC_Processing_software_name": "Sentinel-1 IPF",
+        "sliceProductFlag": "true",
+        "S1TBX_Calibration_vers": "6.0.4",
+        "orbitNumber_start": 13449,
+        "GRD_Post_Processing_facility_site": "DLR-Oberpfaffenhofen",
+        "instrument": "Synthetic Aperture Radar",
+        "GRD_Post_Processing_software_name": "Sentinel-1 IPF",
+        "platform_number": "A",
+        "S1TBX_SAR_Processing_vers": "6.0.4",
+        "productType": "GRD",
+        "orbitProperties_ascendingNodeTime": 1476227079900,
+        "stopTimeANX": 591834.4,
+        "productComposition": "Slice",
+        "productClassDescription": "SAR Standard L1 Product",
+        "GRD_Post_Processing_software_version": "002.72",
+        "SLC_Processing_software_version": "002.72",
+        "orbitNumber_stop": 13449,
+        "instrumentConfigurationID": 5,
+        "system:asset_size": 4050129896,
+        "cycleNumber": 91,
+        "system:index": "S1A_IW_GRDH_1SDV_20161011T231406_20161011T231431_013449_0157D0_0739"
+    }
+}
