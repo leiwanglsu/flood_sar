@@ -4,7 +4,7 @@
 - Install the provided python package by `pip install .`
 ##  Run the scripts
 - Run the following python scripts with correct configuration .json files. 
-- geeData.py: download the jrc water and Sentinel-1 image with user specified band from Google Earth Engine (Warning, this takes a long time because gee processes the image on the server side, the larger the image the longer the time)
+- geeData.py: download the jrc water and Sentinel-1 image with user specified band from Google Earth Engine (Warning, this takes a long time because gee processes the image on the server side, with the larger the image the longer the time)
 - ImageMC.py: prepare images by mosaicing, reprojection, and clipping
 - regiongrow.py: use region grow to generate seeds from jrc water occurrence images
 - region_split.py: multiresolution region splitting for bimodal gamma fitting
